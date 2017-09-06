@@ -15,6 +15,7 @@
 
 * Configuration
 mongod --config /etc/mongod.conf
+mongoimport --db test --collection zips --drop --file zips.json
 
 * Database creation
 
