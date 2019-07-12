@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Solution
   include Mongoid::Document
   @@db = nil
@@ -8,7 +10,7 @@ class Solution
 
   # implement an instance method that returns a reference to the Mongo Collection object
   def self.collection
-    self.mongo_client if not @@db
+    mongo_client unless @@db
     @@db[:zips]
   end
 
