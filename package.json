@@ -1,9 +1,29 @@
 {
   "name": "zips",
-  "private": true,
-  "dependencies": {
-  }, "scripts": {
-//    "lint": "bash hooks/pre-commit",
-    "postinstall": "gulp build"
+  "version": "1.0.0",
+  "description": "> Full CRUD with BSON/MongoDB Rails app > The course provided by Johns Hopkins University and Coursera > zips downloaded from http://media.mongodb.org/zips.json",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuPlutonic/zips.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuPlutonic/zips/issues"
+  },
+  "homepage": "https://github.com/JuPlutonic/zips#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0"
   }
 }

@@ -14,11 +14,17 @@
 
   2.4.6
 
+* MongoDB version
+
+  mongodb-linux-x86_64-ubuntu1604-3.4.2
+
 * Configuration
 
 > mongod --config /etc/mongod.conf
 
 > mongoimport --db test --collection zips --drop --file zips.json
+
+> rails g mongoid:config
 
 * Database creation
 
