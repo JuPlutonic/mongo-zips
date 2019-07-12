@@ -4,3 +4,4 @@ Disallow: /public/404.html
 Disallow: /public/422.html
 Disallow: /public/500.html
 Disallow: /tmp/
+Disallow: /log/
