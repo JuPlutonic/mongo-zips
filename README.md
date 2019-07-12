@@ -25,8 +25,8 @@ mongoimport --db test --collection zips --drop --file zips.json
 rspec NNN
 
 * Services (job queues, cache servers, search engines, etc.)
-Rails 5.1.3
-Mongoid 6.5.1
+Rails 5.2.3
+Mongoid 6.2.1
 Will_paginate
 
 * Deployment instructions
@@ -41,3 +41,4 @@ Search for MongoLab page on Heroku DevCenter to see what to do to complete the d
 PDF: https://drive.google.com/file/d/0Bwvt4e6DQqn4ZVBkc0pLSG0yaGs/view
 
 * TODO: Angular.js front-end interface
+* TODO: Add Autoprefixer to PostCSS plugins
