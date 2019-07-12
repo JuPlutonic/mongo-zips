@@ -1,5 +1,9 @@
 {
   "name": "zips",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+  }, "scripts": {
+//    "lint": "bash hooks/pre-commit",
+    "postinstall": "gulp build"
+  }
 }

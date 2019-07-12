@@ -1,1 +1,6 @@
 # See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Disallow: /public/404.html
+Disallow: /public/422.html
+Disallow: /public/500.html
+Disallow: /tmp/
