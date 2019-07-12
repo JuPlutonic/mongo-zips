@@ -11,7 +11,7 @@
 
 
 * Ruby version
-2.4.1
+2.4.6
 
 * Configuration
 mongod --config /etc/mongod.conf
@@ -26,12 +26,18 @@ rspec NNN
 
 * Services (job queues, cache servers, search engines, etc.)
 Rails 5.1.3
-Mongoid 5.0.0
+Mongoid 6.5.1
 Will_paginate
 
 * Deployment instructions
-https://github.com/jhu-ep-coursera/fullstack-course3-module1-zips
+create mLab Account
+create MongoLab Account
+create Heroku account
 
-* This version is can't be sent as graded assignment to Coursera because of the software upgrades
+to get all zips into the mongo db:
+  mongoimport -h dbhost -d dbname -c zips -u dbuser -p dbpass --file zips.json
+MONGOLAB_URI for heroku: mongodb://dbuser:dbpass@dbhost/dbname
+Search for MongoLab page on Heroku DevCenter to see what to do to complete the deployment
+PDF: https://drive.google.com/file/d/0Bwvt4e6DQqn4ZVBkc0pLSG0yaGs/view
 
 * TODO: Angular.js front-end interface

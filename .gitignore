@@ -20,4 +20,5 @@
 /node_modules
 /yarn-error.log
 
+.irb_saved_history
 .byebug_history
