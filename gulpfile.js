@@ -4,7 +4,7 @@ var autoprefixer = require('autoprefixer'); //Added
 var cssnano = require('cssnano'); //Added
 
 gulp.task('serve',['css'], function() {
-	gulp.watch('./css/*.css', ['css']);
+	gulp.watch('./public/css/*.css', ['css']);
 });
 
 gulp.task('css', function() {
@@ -13,7 +13,7 @@ gulp.task('css', function() {
 		cssnano()
 		// PostCSS Plugins Here
 	];
-	return gulp.src('./css/*.css')
+	return gulp.src('./public/css/*.css')
 		.pipe(postcss(plugin))
 		.pipe(gulp.dest('./dest'));
 });
