@@ -2,10 +2,10 @@
 
 class Solution
   include Mongoid::Document
-  @@db = nil
+  @db = nil
 
   def self.mongo_client
-    @@db = Mongo::Client.new('mongodb://localhost:27017/test')
+    @db = Mongo::Client.new('mongodb://localhost:27017/test')
   end
 
   # implement an instance method that returns a reference to the Mongo Collection object

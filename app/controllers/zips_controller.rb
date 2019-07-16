@@ -4,6 +4,7 @@ class ZipsController < ApplicationController
   # GET /zips
   # GET /zips.json
   def index
+    Rails.logger.info(Zip.name)
     @zips = Zip.all
   end
 

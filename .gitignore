@@ -18,6 +18,8 @@
 !/tmp/.keep
 
 .irb_saved_history
+.rubocop.yml
+.editorconfig
 .byebug_history
 
 +# Ignore uploaded files in development
@@ -25,7 +27,7 @@
 +
  /node_modules
  /yarn-error.log
- 
+
 +/public/assets
  .byebug_history
 +
