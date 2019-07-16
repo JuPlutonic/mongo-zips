@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 class ZipsController < ApplicationController
-  before_action :set_zip, only: [:show, :edit, :update, :destroy]
+  before_action :set_zip, only: %i[show edit update destroy]
 
   # GET /zips
   # GET /zips.json
   def index
-    Rails.logger.info(Zip.name)
     @zips = Zip.all
   end
 
   # GET /zips/1
   # GET /zips/1.json
-  def show
-  end
+  def show; end
 
   # GET /zips/new
   def new
@@ -19,8 +19,7 @@ class ZipsController < ApplicationController
   end
 
   # GET /zips/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /zips
   # POST /zips.json
@@ -63,13 +62,14 @@ class ZipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_zip
-      @zip = Zip.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def zip_params
-      params.require(:zip).permit(:id, :city, :state, :population)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_zip
+    @zip = Zip.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def zip_params
+    params.require(:zip).permit(:id, :city, :state, :population)
+  end
 end
