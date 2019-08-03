@@ -1,27 +1,31 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<div class="ui secondary  menu">
-    <div class="item">
-    <%= link_to 'Back to Zips', zips_path, class: 'ui basic secondary button' %>
-    </div>
-
-<p>
-  <strong>Id:</strong>
-  <%= @zip.id %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @zip.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @zip.state %>
-</p>
-
-<p>
-  <strong>Population:</strong>
-  <%= @zip.population %>
-</p>
-
-<%= link_to 'Edit', edit_zip_path(@zip) %> |
+<br>
+<br>
+<div class="ui secondary menu">
+  <div class="item">
+  <%= link_to 'Back to Zips', zips_path, class: 'ui basic secondary button' %>
+  </div>
+</div>
+<br>
+<div class="ui divided selection list">
+<a class="item">
+ <div class="ui teal horizontal label">Id:</div>
+  <%= @zip.id%>
+</a>
+<a class="item">
+<div class="ui orange horizontal label">City:</div>
+  <%= @zip.city%>
+</a>
+<a class="item">
+<div class="ui purple horizontal label">State:</div>
+  <%= @zip.state%>
+</a>
+<a class="item">
+<div class="ui blue horizontal label">Population:</div>
+  <%= @zip.population%>
+</a>
+<div class="uisecondary menu">
+  <div class="item">
+  <%= link_to 'Edit', edit_zip_path(@zip), class: 'ui basic secondary button' %>
+  </div>
+</div>

@@ -1,14 +1,16 @@
 <!-- <p id="notice"><%= notice %></p> -->
-
+<br>
+<br>
+<br>
 <!-- SEARCH BAR -->
 <div class="ui secondary menu">
-  <div class="right menu">
+  <div class="right menu"
     <div class="item">
-      <% form_tag zips_path, method: :get do %>
+      <%= form_tag zips_path, method: :get do %>
       <div class="ui action left icon input">
         <i class="search icon"></i>
         <%= text_field_tag :search, params[:search], placeholder: 'Search…'%>
-        <%= button_tag "Search", name: nil, class: 'ui teal button', data: { disable_with: " <i class='fa fa-spinner fa-spinfa-fw'></i> Searching… " } %>
+        <%= button_tag "Search", name: nil, class: 'ui teal button', data: { disable_with: " <i class='fa fa-spinner fa-spin fa-fw'></i> Searching… " } %>
       </div>
       <%end%>
     </div>
@@ -24,7 +26,7 @@
       <th>Id</th>
       <th>City</th>
       <th class="descending">State <%=semantic_icon('sort')%></th>
-      <th colspan="2">Population</th>
+      <th colspan="4">Population</th>
     </tr>
   </thead>
 

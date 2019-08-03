@@ -1,21 +1,24 @@
-<div class="ui secondary menu">
-<a class="item">
-	Home
-</a>
-<a class="item">
-	Cities
-</a>
-<a class="item">
-	States
-</a>
-  <!--
-	<div class="right menu">
-		<div class="item">
-			<div class="ui icon input">
-		    	<input placeholder="Search…" type="text">
-		    	<i class="search link icon"></i>
-		    </div>
-		</div>
-	</div>
-  -->
+<div class="ui fixed inverted menu" id="navbar">
+  <div class="ui container">
+    <a href="/" class="header item">
+    <%= semantic_icon('send outline ') %>
+      Zips
+    </a>
+
+    <div class="item <%= active_class('zips', 'city') %>">
+    <%= semantic_icon('edit') %>
+    <%=link_to '/zips', class: "nav-link" do %>
+       Cities
+       <span class="sr-only"> <%= active_span('zips', 'city') %> </span>
+    <% end %>
+    </div>
+
+    <div class="item <%= active_class('zips', 'state') %>">
+    <%= semantic_icon('mail') %>
+    <%= link_to '/zips/state', class: "nav-link" do %>
+      States
+      <span class="sr-only"> <%= active_span('zips', 'state') %> </span>
+    <% end %>
+    </div>
+  </div>
 </div>
