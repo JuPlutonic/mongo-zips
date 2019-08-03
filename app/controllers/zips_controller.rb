@@ -13,7 +13,7 @@ class ZipsController < ApplicationController
     # args[:sort] = get_sort_hash(args[:sort])
     # @zips = Zip.paginate(args)
     @zips = if params[:search].blank?
-              Zip.all.paginate(page: params[:page], per_page: 10)
+              Zip.all.order(state: :desc).paginate(page: params[:page], per_page: 10)
             else
               Zip.search(params[:search]).paginate(page: params[:page], per_page: 10)
             end
@@ -86,15 +86,15 @@ class ZipsController < ApplicationController
   # create a hash sort spec from query parameters
   # sort = state: 1, city, population: -1
   # {state: 1, city: 1, population: -1}
-  def get_sort_hash(sort)
-    order = {}
-    return order if sort.nil?
+  # def get_sort_hash(sort)
+  #   order = {}
+  #   return order if sort.nil?
 
-    sort.split(',').each do |term|
-      args = term.split(':')
-      dir = args.size < 2 || args[1].to_i >= 0 ? 1 : -1
-      order[args[0]] = dir
-    end
-    order
-  end
+  #   sort.split(',').each do |term|
+  #     args = term.split(':')
+  #     dir = args.size < 2 || args[1].to_i >= 0 ? 1 : -1
+  #     order[args[0]] = dir
+  #   end
+  #   order
+  # end
 end
