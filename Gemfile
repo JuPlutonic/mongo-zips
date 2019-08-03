@@ -19,6 +19,9 @@ gem 'font-awesome-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 ## Added gem
+# Use jQuery with Rails 3 (http://rubygems.org/gems/jquery-rails)
+gem 'jquery-rails'
+## Added gem
 # Integrate SassC-Ruby into Rails. (https://github.com/sass/sassc-rails)
 gem 'sassc-rails'
 ## Added gem
