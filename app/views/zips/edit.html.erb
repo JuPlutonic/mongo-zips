@@ -2,5 +2,9 @@
 
 <%= render 'form', zip: @zip %>
 
-<%= link_to 'Show', @zip %> |
-<%= link_to 'Back', zips_path %>
+<br>
+<div class="ui celled">
+<%= link_to 'Show', @zip, class: 'ui button left' %>
+<%= link_to 'Back', zips_path, class: 'ui button right' %>
+</div>
+<br>

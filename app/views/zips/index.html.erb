@@ -33,15 +33,15 @@
 
   <tbody>
     <% @zips.each do |zip| %>
+      <% zip = to_zip(zip) %>
       <tr>
-        <% zip = to_zip(zip) %>
         <td><%= zip.id %></td>
         <td><%= zip.city %></td>
         <td><%= zip.state %></td> <!-- post.user.username" -->
         <td><%= zip.population %></td> <!--<td><#%= time_ago_in_words(post.created_at)"%> ago</td>-->
         <td class="positive"><%= link_to 'Show', zip %></td>
         <td class="warnings"><%= link_to 'Edit', edit_zip_path(zip) %></td>
-        <td class="negative"><%=link_to semantic_icon('trash outline') + 'Delete', zip, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td> <!-- <i class="trash outline icon"></i></td> -->
+        <td class="negative"><%= link_to semantic_icon('trash outline') + 'Delete', zip, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td> <!-- <i class="trash outline icon"></i></td> -->
       </tr>
     <% end %>
   </tbody>

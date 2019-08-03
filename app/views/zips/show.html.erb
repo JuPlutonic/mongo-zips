@@ -3,10 +3,9 @@
 <br>
 <div class="ui secondary menu">
   <div class="item">
-  <%= link_to 'Back to Zips', zips_path, class: 'ui basic secondary button' %>
+  <%= link_to 'Back to Zips', zips_path, class: 'ui button' %>
   </div>
 </div>
-<br>
 <div class="ui divided selection list">
 <a class="item">
  <div class="ui teal horizontal label">Id:</div>
@@ -24,8 +23,8 @@
 <div class="ui blue horizontal label">Population:</div>
   <%= @zip.population%>
 </a>
-<div class="uisecondary menu">
+<div class="ui secondary menu">
   <div class="item">
-  <%= link_to 'Edit', edit_zip_path(@zip), class: 'ui basic secondary button' %>
+  <%= link_to 'Edit', edit_zip_path(@zip), class: 'ui button' %>
   </div>
 </div>
