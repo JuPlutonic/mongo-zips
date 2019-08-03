@@ -2,7 +2,7 @@
 
 <h1>Zips</h1>
 
-<table>
+<table class="ui sortable celled table">
   <thead>
     <tr>
       <th>Id</th>
@@ -14,16 +14,19 @@
   </thead>
 
   <tbody>
-    <% @zips.each do |zip| %>
-      <tr>
-        <td><%= zip.id %></td>
-        <td><%= zip.city %></td>
-        <td><%= zip.state %></td>
-        <td><%= zip.population %></td>
-        <td><%= link_to 'Show', zip %></td>
-        <td><%= link_to 'Edit', edit_zip_path(zip) %></td>
-        <td><%= link_to 'Destroy', zip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if @zips %>
+      <% @zips.each do |zip| %>
+        <tr>
+          <% zip = to_zip(zip) %>
+          <td><%= zip.id %></td>
+          <td><%= zip.city %></td>
+          <td><%= zip.state %></td>
+          <td><%= zip.population %></td>
+          <td class="positive"><%= link_to 'Show', zip %></td>
+          <td class="warnings"><%= link_to 'Edit', edit_zip_path(zip) %></td>
+          <td class="negative"><%= link_to 'Destroy', zip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

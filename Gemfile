@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -13,7 +13,7 @@ gem 'sqlite3'
 # Rack HTTP server for fast clients and Unix (http://unicorn.bogomips.org/)
 gem 'unicorn'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sassc-rails'
 # Semantic UI, converted to Sass and ready to drop into Rails, Compass, or Sprockets. (http://github.com/doabit/semantic-ui-sass)
 # gem 'semantic-ui-sass'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,6 +23,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+## Added gem
+# Semantic UI, converted to Sass and ready to drop into Rails, Compass, or Sprockets. (http://github.com/doabit/semantic-ui-sass)
+gem 'semantic-ui-sass'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -31,6 +34,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'mongo'
 gem 'mongoid', '~> 6.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -63,7 +67,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
 end
 

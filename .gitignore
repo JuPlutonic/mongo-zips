@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Oink crashed Heroku deployed app
+/initializers/oink.rb
+
 # Ignore bundler config.
 /.bundle
 
@@ -22,14 +25,14 @@
 .editorconfig
 .byebug_history
 
-+# Ignore uploaded files in development
-+/storage/*
-+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
  /node_modules
  /yarn-error.log
 
-+/public/assets
- .byebug_history
-+
-+# Ignore master key for decrypting credentials and more.
-+/config/master.key
+/public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

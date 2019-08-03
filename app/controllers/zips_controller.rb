@@ -7,6 +7,9 @@ class ZipsController < ApplicationController
   # GET /zips.json
   def index
     @zips = Zip.all
+    # args = params.clone
+    # args[:sort] = get_sort_hash(args[:sort])
+    # @zips = Zip.paginate(args)
   end
 
   # GET /zips/1
@@ -56,7 +59,7 @@ class ZipsController < ApplicationController
   def destroy
     @zip.destroy
     respond_to do |format|
-      format.html { redirect_to zips_url, notice: 'Zip was successfully destroyed.' }
+      format.html { redirect_to zips_path, notice: 'Zip was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,8 +71,23 @@ class ZipsController < ApplicationController
     @zip = Zip.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary Internet, only allow the white list through.
   def zip_params
     params.require(:zip).permit(:id, :city, :state, :population)
+  end
+
+  # create a hash sort spec from query parameters
+  # sort = state: 1, city, population: -1
+  # {state: 1, city: 1, population: -1}
+  def get_sort_hash(sort)
+    order = {}
+    return order if sort.nil?
+
+    sort.split(',').each do |term|
+      args = term.split(':')
+      dir = args.size < 2 || args[1].to_i >= 0 ? 1 : -1
+      order[args[0]] = dir
+    end
+    order
   end
 end

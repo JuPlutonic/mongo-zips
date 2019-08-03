@@ -17,5 +17,13 @@ module Zips
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    # bootstraps mongoid within applications -- like rails console
+    Mongoid.load!('./config/mongoid.yml')
+
+    # which default ORM are we using with scaffold
+    # add  --orm none, mongoid, or active_record
+    #    to rails generate command line to be specific
+    config.generators {|g| g.orm :active_record }
+    # config.generators {|g| g.orm :mongoid}
   end
 end

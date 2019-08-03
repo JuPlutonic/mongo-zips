@@ -12,7 +12,7 @@
 
 * Ruby version
 
-  2.4.6
+  2.6.3
 
 * MongoDB version
 
