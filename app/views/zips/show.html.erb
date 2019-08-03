@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="ui secondary  menu">
+    <div class="item">
+    <%= link_to 'Back to Zips', zips_path, class: 'ui basic secondary button' %>
+    </div>
 
 <p>
   <strong>Id:</strong>
@@ -21,4 +25,3 @@
 </p>
 
 <%= link_to 'Edit', edit_zip_path(@zip) %> |
-<%= link_to 'Back', zips_path %>

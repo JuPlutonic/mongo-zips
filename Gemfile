@@ -4,51 +4,59 @@ source 'https://rubygems.org'
 
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Full-stack web application framework. (http://www.rubyonrails.org)
 gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use Puma as the app server
-# gem 'puma', '~> 3.11'
+## Added gem
+# Elegant Persistence in Ruby for MongoDB. (http://mongoid.org)
+gem 'mongoid', '~> 6.2.1'
+## Added gem
 # Rack HTTP server for fast clients and Unix (http://unicorn.bogomips.org/)
 gem 'unicorn'
-# Use SCSS for stylesheets
-gem 'sassc-rails'
-# Semantic UI, converted to Sass and ready to drop into Rails, Compass, or Sprockets. (http://github.com/doabit/semantic-ui-sass)
-# gem 'semantic-ui-sass'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+## Added gem
+# an asset gemification of the font-awesome icon font library (https://github.com/bokmann/font-awesome-rails)
+gem 'font-awesome-rails'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.7'
+## Added gem
+# Integrate SassC-Ruby into Rails. (https://github.com/sass/sassc-rails)
+gem 'sassc-rails'
 ## Added gem
 # Semantic UI, converted to Sass and ready to drop into Rails, Compass, or Sprockets. (http://github.com/doabit/semantic-ui-sass)
 gem 'semantic-ui-sass'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+## Added gem
+# Pagination plugin for web frameworks and other apps (https://github.com/mislav/will_paginate/wiki)
+gem 'will_paginate', '~> 3.1.6'
+## Added gem
+# Integrates the Semantic UI pagination component with will_paginate (https://github.com/rafaelbiriba/will_paginate_semantic_ui)
+gem 'will_paginate_semantic_ui'
+## Added gem
+# An extension that becomes possible use paginate method with Mongoid
+gem 'will_paginate_mongoid'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'mongo'
-gem 'mongoid', '~> 6.2.1'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-gem 'will_paginate', '~> 3.1.6'
 # Reduces boot times through caching; required in config/boot.rb
 # gem 'bootsnap', '>= 1.1.0', require: false
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'mini_racer', platforms: :ruby
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 3.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
+  # Ruby 2.0 fast debugger - base + CLI (http://github.com/deivid-rodriguez/byebug)
+  gem 'byebug', platforms: :mri
+  # Rspec-2.11.0 (http://github.com/rspec)
   gem 'rspec'
+  # Provides "its" method formerly part of rspec-core (https://github.com/rspec/rspec-its)
   gem 'rspec-its'
 end
 
@@ -63,13 +71,13 @@ group :development do
 end
 
 group :test do
-  #  gem 'capybara', '~> 2.13'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'webdrivers'
   gem 'selenium-webdriver'
+  # Easy download and use of browser drivers. (https://github.com/titusfortner/webdrivers)
+  gem 'webdrivers'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# Timezone Data for TZInfo (http://tzinfo.github.io)
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

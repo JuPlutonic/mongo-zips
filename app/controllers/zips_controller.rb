@@ -2,14 +2,21 @@
 
 class ZipsController < ApplicationController
   before_action :set_zip, only: %i[show edit update destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   # GET /zips
   # GET /zips.json
   def index
-    @zips = Zip.all
+    # @zips = Zip.all
+    # sleep 2
     # args = params.clone
     # args[:sort] = get_sort_hash(args[:sort])
     # @zips = Zip.paginate(args)
+    @zips = if params[:search].blank?
+              Zip.all.paginate(page: params[:page], per_page: 10)
+            else
+              Zip.search(params[:search]).paginate(page: params[:page], per_page: 10)
+            end
   end
 
   # GET /zips/1
@@ -59,7 +66,7 @@ class ZipsController < ApplicationController
   def destroy
     @zip.destroy
     respond_to do |format|
-      format.html { redirect_to zips_path, notice: 'Zip was successfully destroyed.' }
+      format.html { redirect_to zips_url, notice: 'Zip was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,7 +80,7 @@ class ZipsController < ApplicationController
 
   # Never trust parameters from the scary Internet, only allow the white list through.
   def zip_params
-    params.require(:zip).permit(:id, :city, :state, :population)
+    params.require(:zip).permit(:id, :city, :state, :population, :search)
   end
 
   # create a hash sort spec from query parameters

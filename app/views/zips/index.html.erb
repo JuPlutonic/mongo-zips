@@ -1,36 +1,70 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+
+<!-- SEARCH BAR -->
+<div class="ui secondary menu">
+  <div class="right menu">
+    <div class="item">
+      <% form_tag zips_path, method: :get do %>
+      <div class="ui action left icon input">
+        <i class="search icon"></i>
+        <%= text_field_tag :search, params[:search], placeholder: 'Search…'%>
+        <%= button_tag "Search", name: nil, class: 'ui teal button', data: { disable_with: " <i class='fa fa-spinner fa-spinfa-fw'></i> Searching… " } %>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
 
 <h1>Zips</h1>
 
-<table class="ui sortable celled table">
+<!-- TABLE -->
+<table class="ui fixed single line sortable celled table">
   <thead>
     <tr>
       <th>Id</th>
       <th>City</th>
-      <th>State</th>
-      <th>Population</th>
-      <th colspan="3"></th>
+      <th class="descending">State <%=semantic_icon('sort')%></th>
+      <th colspan="2">Population</th>
     </tr>
   </thead>
 
   <tbody>
-    <% if @zips %>
-      <% @zips.each do |zip| %>
-        <tr>
-          <% zip = to_zip(zip) %>
-          <td><%= zip.id %></td>
-          <td><%= zip.city %></td>
-          <td><%= zip.state %></td>
-          <td><%= zip.population %></td>
-          <td class="positive"><%= link_to 'Show', zip %></td>
-          <td class="warnings"><%= link_to 'Edit', edit_zip_path(zip) %></td>
-          <td class="negative"><%= link_to 'Destroy', zip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
+    <% @zips.each do |zip| %>
+      <tr>
+        <% zip = to_zip(zip) %>
+        <td><%= zip.id %></td>
+        <td><%= zip.city %></td>
+        <td><%= zip.state %></td> <!-- post.user.username" -->
+        <td><%= zip.population %></td> <!--<td><#%= time_ago_in_words(post.created_at)"%> ago</td>-->
+        <td class="positive"><%= link_to 'Show', zip %></td>
+        <td class="warnings"><%= link_to 'Edit', edit_zip_path(zip) %></td>
+        <td class="negative"><%= link_to link_to semantic_icon('trash') + 'Delete', zip, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td> <!-- <i class="trash outline icon"></i></td> -->
+      </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr>
+      <th>
+        <strong>Total: <%=@zips.count%></strong>
+      </th>
+      <th></th>
+      <th></th>
+
+      <th></th>
+      <th colspan="2"></th>
+    </tr>
+  </tfoot>
 </table>
 
 <br>
 
-<%= link_to 'New Zip', new_zip_path %>
+<%= link_to 'New Zip', new_zip_path, class: 'ui primary button' %>
+
+<br>
+<div class="ui segment" id="paginate">
+<%= will_paginate @zips, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+</div>
+
+<script>
+  $('table').tablesort()
+</script>

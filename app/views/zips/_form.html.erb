@@ -10,28 +10,29 @@
       </ul>
     </div>
   <% end %>
+  <div class="ui form">
+    <div class="field">
+      <%= form.label :id %>
+      <%= form.text_field :id %>
+    </div>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
-  </div>
+    <div class="field">
+      <%= form.label :city %>
+      <%= form.text_field :city %>
+    </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
+    <div class="field">
+      <%= form.label :state %>
+      <%= form.text_field :state %>
+    </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :population %>
-    <%= form.number_field :population %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label :population %>
+      <%= form.number_field :population %>
+    </div>
+    <div class="actions">
+      <%#= form.submit %>
+      <%= button_tag "Submit", class: 'ui primary button', data: { disable_with: "<i class='fa fa-spinner fa-spin fa-fw'></i> Saving…"} %>
+    </div>
   </div>
 <% end %>

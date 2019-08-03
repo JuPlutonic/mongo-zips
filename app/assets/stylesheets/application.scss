@@ -1,10 +1,13 @@
-$font-url: 'https://fonts.googleapis.com/css?family=Dancing+Script|Lora|Raleway|Sansita" rel="stylesheet';
+$font-url: 'https://fonts.googleapis.com/css?family=Dancing+Script|Lora|Open+Sans|Raleway|Sansita" rel="stylesheet';
 
 // font-family: 'Sansita',sans-serif;
+// font-family: 'Open Sans',sans-serif;
 // font-family: 'Raleway',sans-serif;
 // font-family: 'Dancing Script',cursive;
 // font-family: 'Lora',serif;
 
+@import "icon_styles";
 @import 'semantic-ui';
 @import 'variables';
 @import 'main';
+@import "font-awesome";
