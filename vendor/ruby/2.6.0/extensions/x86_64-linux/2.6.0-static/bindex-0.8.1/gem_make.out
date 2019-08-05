@@ -1,0 +1,15 @@
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/media/salessionato/Ruby/ruby/.rbenv/versions/2.6.3/bin/ruby -I /media/salessionato/Ruby/ruby/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190805-28597-1rhuscd.rb extconf.rb
+creating Makefile
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/home/linuxbrew/.linuxbrew/bin/ginstall -c -m 0755 cruby.so ./.gem.20190805-28597-g6tpad/skiptrace/internal

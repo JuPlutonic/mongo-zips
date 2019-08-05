@@ -44,6 +44,8 @@
 
 > create mLab (MongoLab) and Heroku accounts
 
+> use command `/opt/mongodb-linux-x86_64-ubuntu1804-4.0.11/bin/mongoimport -h cluster-zips-shard-0/cluster-zips-shard-00-00-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-01-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-02-"$MONGO_SRV_ID".mongodb.net:27017 --ssl -u "$MONGO_USER" -p "$MONGO_PWD" --authenticationDatabase admin -d cluster-zips --collection zips --drop --file zips.json` for import zips
+
 > For Heroku we use environment variable MONGOLAB_URI: mongodb://dbuser:dbpass@dbhost/dbname
 
 > Search for mLab (MongoLab) page on Heroku DevCenter to see what to do to complete the deployment

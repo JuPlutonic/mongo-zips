@@ -16,6 +16,9 @@ gem 'unicorn'
 ## Added gem
 # an asset gemification of the font-awesome icon font library (https://github.com/bokmann/font-awesome-rails)
 gem 'font-awesome-rails'
+## Added gem
+# Interactive Ruby command-line tool for REPL (Read Eval Print Loop). (https://github.com/ruby/irb)
+gem 'irb', require: false
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 ## Added gem
