@@ -16,9 +16,10 @@
 
 * MongoDB version
 
-  mongodb-linux-x86_64-ubuntu1604-3.4.2
+  (local mongodb: mongodb-linux-x86_64-ubuntu1604-3.4.2
+  local mongodb to interoperate with remote server: mongodb-linux-x86_64-ubuntu1804-4.0.11, remote mongodb - mlab: 4.0.11)
 
-* Configuration
+* Configuration / database creation-initialization
 
 > mongod --config /etc/mongod.conf
 
@@ -26,9 +27,6 @@
 
 > rails g mongoid:config
 
-* Database creation
-
-* Database initialization
 
 * How to run the test suite
 
@@ -36,7 +34,7 @@
 
 * Services (job queues, cache servers, search engines, etc.)
 
-> Rails 5.2.3
+> Rails 5.2.3 (rails new --skip-active-record)
 
 > Mongoid 6.2.1
 

@@ -1,0 +1,25 @@
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bson-4.5.0/ext/bson
+/media/salessionato/Ruby/ruby/.rbenv/versions/2.6.3/bin/ruby -I /media/salessionato/Ruby/ruby/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190804-15362-1yfbnot.rb extconf.rb
+creating Makefile
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bson-4.5.0/ext/bson
+make "DESTDIR=" clean
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bson-4.5.0/ext/bson
+make "DESTDIR="
+compiling bson_native.c
+In file included from bson_native.c:21:0:
+native-endian.h:145:17: warning: '__bson_uint32_swap_slow' defined but not used [-Wunused-function]
+ static uint32_t __bson_uint32_swap_slow(uint32_t v)
+                 ^
+native-endian.h:169:17: warning: '__bson_uint64_swap_slow' defined but not used [-Wunused-function]
+ static uint64_t __bson_uint64_swap_slow(uint64_t v)
+                 ^
+native-endian.h:196:15: warning: '__bson_double_swap_slow' defined but not used [-Wunused-function]
+ static double __bson_double_swap_slow(double v)
+               ^
+linking shared-object bson_native.so
+
+current directory: /media/salessionato/Ruby/ruby_oth/jhu/jhu_zips2/zips/vendor/ruby/2.6.0/gems/bson-4.5.0/ext/bson
+make "DESTDIR=" install
+/home/linuxbrew/.linuxbrew/bin/ginstall -c -m 0755 bson_native.so ./.gem.20190804-15362-1dt0far
