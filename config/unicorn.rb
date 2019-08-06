@@ -1,14 +1,14 @@
  frozen_string_literal: true
 
 worker_processes 3 # amount of unicorn workers to spin up
-timeout 30         # restarts workers that hang for 30 seconds
+timeout 15         # restarts workers that hang for 30 seconds
 # pid_file   = "shared/pids/unicorn.pid"
 # socket_file= "shared/unicorn.sock"
 # log_file   = "#log/unicorn.log"
 # err_log    = "log/unicorn_error.log"
 # old_pid    = pid_file + '.oldbin'
 
-app_name = 'zips'
+app_name = 'zips-semanticand-angular'
 # root = '/var/www/#{app_name}/current'
 # pid           "#{root}/tmp/pids/unicorn.pid"
 # stderr_path   "#{root}/log/unicorn.error.log"
@@ -43,11 +43,13 @@ before_fork do |server, worker|
   # old_pid = "#{root}/tmp/pids/unicorn.pid.oldbin"
   # if File.exists?(old_pid) && server.pid != old_pid
   #   begin
-  #     Process.kill("QUIT", File.read(old_pid).to_i)
+  Signal.trap 'TERM' do
+    puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
+    Process.kill('QUIT', File.read(old_pid).to_i)
   #   rescue Errno::ENOENT, Errno::ESRCH
   #     # someone else did our job for us
   #   end
-  # end
+  end
 end
 
 after_fork do |server, worker|
@@ -64,22 +66,25 @@ after_fork do |server, worker|
   # Unicorn master is started as root, which is fine, but let's
   # drop the workers to deployer:deployer
 
-  begin
-    uid = gid = Process.euid
-    user = group = 'deployer'
-    target_uid = Etc.getpwnam(user).uid
-    target_gid = Etc.getgrnam(group).gid
-    # worker.tmp.chown(target_uid, target_gid)
-    if uid != target_uid || gid != target_gid
-      Process.initgroups(user, target_gid)
-      Process::GID.change_privilege(target_gid)
-      Process::UID.change_privilege(target_uid)
-    end
-  rescue => e
-    raise e unless RAILS_ENV == 'development'
-    STDERR.puts 'couldn\'t change user, oh well'
-  end
+  # begin
+  #   uid = gid = Process.euid
+  #   user = group = 'deployer'
+  #   target_uid = Etc.getpwnam(user).uid
+  #   target_gid = Etc.getgrnam(group).gid
+  #   # worker.tmp.chown(target_uid, target_gid)
+  #   if uid != target_uid || gid != target_gid
+  #     Process.initgroups(user, target_gid)
+  #     Process::GID.change_privilege(target_gid)
+  #     Process::UID.change_privilege(target_uid)
+  #   end
+  # rescue => e
+  #   raise e unless RAILS_ENV == 'development'
+  #   STDERR.puts 'couldn\'t change user, oh well'
+  # end
 
+  Signal.trap 'TERM' do
+    puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
+  end
   # if defined?(EventMachine)
   #   unless EventMachine.reactor_running? && EventMachine.reactor_thread.alive?
   #     if EventMachine.reactor_running?
