@@ -1,3 +1,4 @@
+
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
@@ -5,7 +6,7 @@ source 'https://rubygems.org'
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
 # Full-stack web application framework. (http://www.rubyonrails.org)
-gem 'rails', '~> 5.2.3'
+gem 'rails', '= 5.2.4.6'
 ## Added gem
 # Elegant Persistence in Ruby for MongoDB. (http://mongoid.org)
 gem 'mongoid', '~> 6.2.1'
@@ -67,18 +68,23 @@ group :development, :test do
 end
 
 group :development do
+  # Guard gem for RSpec (https://github.com/guard/guard-rspec)
+  gem 'guard-rspec', require: false
+  # Listen to file modifications (https://github.com/guard/listen)
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # rspec command for spring (https://github.com/jonleighton/spring-commands-rspec)
+  gem 'spring-commands-rspec'
   # gem 'spring', github: 'mizalewski/spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'capybara', '~> 3.28.0', '< 4.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'selenium-webdriver'
   # Easy download and use of browser drivers. (https://github.com/titusfortner/webdrivers)
