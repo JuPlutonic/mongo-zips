@@ -80,7 +80,8 @@
     "tmp": "0.0.28",
     "undertaker-registry": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "xmlhttprequest-ssl": "^1.6.3"
   },
   "devDependencies": {
     "babel-eslint": ">=6.1.2",
