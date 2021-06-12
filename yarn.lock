@@ -3899,7 +3899,6 @@ gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.2, gulp-util@
 
 "gulp@github:gulpjs/gulp#4.0":
   version "4.0.2"
-  uid "069350a5febf65adc27bc816a7805471b7d96f03"
   resolved "https://codeload.github.com/gulpjs/gulp/tar.gz/069350a5febf65adc27bc816a7805471b7d96f03"
   dependencies:
     glob-watcher "^5.0.3"
@@ -8733,6 +8732,11 @@ ws@~6.1.0:
   integrity sha512-eqZfL+NE/YQc1/ZynhojeV8q+H050oR8AZ2uIev7RU10svA9ZnJUddHcOUZTJLinZ9yEfdA2kSATS2qZK5fhJA==
   dependencies:
     async-limiter "~1.0.0"
+
+xmlhttprequest-ssl@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.6.3.tgz#03b713873b01659dfa2c1c5d056065b27ddc2de6"
+  integrity sha512-3XfeQE/wNkvrIktn2Kf0869fC0BN6UpydVasGIeSm2B1Llihf7/0UfZM+eCkOw3P7bP4+qPgqhm7ZoxuJtFU0Q==
 
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"
