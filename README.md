@@ -12,16 +12,17 @@
 
 * Ruby version
 
-  2.6.3
+  2.6.7
 
 * MongoDB version
 
-  (local mongodb: mongodb-linux-x86_64-ubuntu1604-3.4.2
-  local mongodb to interoperate with remote server: mongodb-linux-x86_64-ubuntu1804-4.0.11, remote mongodb - mlab: 4.0.11)
+  (local mongodb: mongodb-linux-x86_64-ubuntu1804-4.4.6 (mongodb-community) +
+  mongodb-database-tools-ubuntu1804-x86_64-100.3.1,
+  mongodb interoperates with remote server: , remote mongodb - mlab)
 
-* Rails 5.2.3 `rails new --skip-active-record`
+* Rails 5.2.6 `rails new --skip-active-record`
 
-* Mongoid 6.2.1
+* Mongoid 6.4.8
 
 * Will_paginate
 
@@ -43,6 +44,6 @@
 
 > create mLab (MongoLab) and Heroku accounts
 
-> use command `/opt/mongodb-linux-x86_64-ubuntu1804-4.0.11/bin/mongoimport -h cluster-zips-shard-0/cluster-zips-shard-00-00-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-01-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-02-"$MONGO_SRV_ID".mongodb.net:27017 --ssl -u "$MONGO_USER" -p "$MONGO_PWD" --authenticationDatabase admin -d cluster-zips --collection zips --drop --file zips.json` for import zips
+> use command `%mongodb_installation%/bin/mongoimport -h cluster-zips-shard-0/cluster-zips-shard-00-00-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-01-"$MONGO_SRV_ID".mongodb.net:27017,cluster-zips-shard-0/cluster-zips-shard-00-02-"$MONGO_SRV_ID".mongodb.net:27017 --ssl -u "$MONGO_USER" -p "$MONGO_PWD" --authenticationDatabase admin -d cluster-zips --collection zips --drop --file zips.json` for import zips
 
 > For Heroku we use environment variable MONGOLAB_URI: `heroku config:add MONGOLAB_URI=mongodb+srv://dbuser:dbpass@dbhost/dbname`

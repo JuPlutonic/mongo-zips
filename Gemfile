@@ -6,10 +6,10 @@ source 'https://rubygems.org'
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
 # Full-stack web application framework. (http://www.rubyonrails.org)
-gem 'rails', '= 5.2.4.6'
+gem 'rails', '~> 5.2'
 ## Added gem
 # Elegant Persistence in Ruby for MongoDB. (http://mongoid.org)
-gem 'mongoid', '~> 6.2.1'
+gem 'mongoid', '~> 6.2'
 ## Added gem
 # Rack HTTP server for fast clients and Unix (http://unicorn.bogomips.org/)
 gem 'unicorn'
@@ -24,7 +24,7 @@ gem 'irb', require: false
 gem 'jbuilder', '~> 2.7'
 ## Added gem
 # Pagination plugin for web frameworks and other apps (https://github.com/mislav/will_paginate/wiki)
-gem 'will_paginate', '~> 3.1.6'
+gem 'will_paginate', '~> 3.1'
 ## Added gem
 # Integrates the Semantic UI pagination component with will_paginate (https://github.com/rafaelbiriba/will_paginate_semantic_ui)
 gem 'will_paginate_semantic_ui'
@@ -33,9 +33,9 @@ gem 'will_paginate_semantic_ui'
 gem 'will_paginate_mongoid'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1'
 # Reduces boot times through caching; required in config/boot.rb
-# gem 'bootsnap', '>= 1.1.0', require: false
+# gem 'bootsnap', '>= 1.1', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Use ActiveStorage variant
@@ -56,7 +56,7 @@ gem 'semantic-ui-sass'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3'
 
 group :development, :test do
   # Ruby 2.0 fast debugger - base + CLI (http://github.com/deivid-rodriguez/byebug)
@@ -77,14 +77,14 @@ group :development do
   # rspec command for spring (https://github.com/jonleighton/spring-commands-rspec)
   gem 'spring-commands-rspec'
   # gem 'spring', github: 'mizalewski/spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.3'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.28.0', '< 4.0'
+  gem 'capybara', '~> 3.28', '< 4.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'selenium-webdriver'
   # Easy download and use of browser drivers. (https://github.com/titusfortner/webdrivers)
