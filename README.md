@@ -1,4 +1,5 @@
-# (App in the wild)[http://zips-semanticand-angular.herokuapp.com]
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=zips-semanticand-angular&style=plastic)
+[::App![app in the wild](https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/uploaded_logos/13555/icon.png)in the wild::](https://zips-semanticand-angular.herokuapp.com/)
 
 > Full CRUD with BSON/MongoDB Rails app
 > The course provided by Johns Hopkins University and Coursera
