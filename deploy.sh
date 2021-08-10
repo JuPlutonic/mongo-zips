@@ -6,7 +6,7 @@ cp Gemfile.lock dist/Gemfile.lock
 cd dist
 git add .
 git commit -m 'Deploy to Heroku'
-git push -f heroku heroku:master
+git heroku master --force
 cd ..
 git worktree remove dist
 git branch -D heroku
