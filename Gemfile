@@ -33,7 +33,7 @@ gem 'will_paginate_semantic_ui'
 gem 'will_paginate_mongoid'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1'
+# gem 'bcrypt', '~>
 # Reduces boot times through caching; required in config/boot.rb
 # gem 'bootsnap', '>= 1.1', require: false
 # Use Capistrano for deployment
@@ -56,7 +56,7 @@ gem 'semantic-ui-sass'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3'
+gem 'uglifier', '~> 2.7'
 
 group :development, :test do
   # Ruby 2.0 fast debugger - base + CLI (http://github.com/deivid-rodriguez/byebug)
