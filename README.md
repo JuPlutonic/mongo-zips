@@ -1,11 +1,16 @@
-# About app
+# Badges
 
 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=zips-semanticand-angular&style=plastic)
-[::App![app in the wild](https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/uploaded_logos/13555/icon.png)in the wild::](https://zips-semanticand-angular.herokuapp.com/)
+
+[::App in the wild::](https://zips-semanticand-angular.herokuapp.com/)
+
+![app in the wild](https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/uploaded_logos/13555/icon.png)
+
+## About app
 
 > Full CRUD with BSON/MongoDB Rails app \
 > The course provided by Johns Hopkins University and Coursera \
-> Zips downloaded from http://media.mongodb.org/zips.json
+> Zips downloaded from <https://media.mongodb.org/zips.json>
 
 Why Mongo?
 >   This Document-based DB is very good for geospatial data
@@ -27,17 +32,13 @@ Other versions:
 * Mongoid 6.4.8
 * Will_paginate
 
-# Developmernt configuration / database creation-initialization
+## Developmernt configuration / database creation-initialization
 
-> `mongod --config /etc/mongod.conf`
-
-> `mongoimport --db zips_development --collection zips --drop --file zips.json`
-
+> `mongod --config /etc/mongod.conf` \
+> `mongoimport --db zips_development --collection zips --drop --file zips.json` \
 > `rails g mongoid:config`
 
-# Deployment instructions
-
-
+## Deployment instructions
 
 ```diff
 - Search for mLab (MongoLab) page on Heroku DevCenter
@@ -48,16 +49,18 @@ Other versions:
 
 -```bash
 #  %mongodb_installation%/bin/mongoimport -h \
-   cluster-zips-shard-0/cluster-zips-shard-00-00-"$MONGO_SRV_ID".mongodb.net:27017, \
-   cluster-zips-shard-0/cluster-zips-shard-00-01-"$MONGO_SRV_ID".mongodb.net:27017, \
-   cluster-zips-shard-0/cluster-zips-shard-00-02-"$MONGO_SRV_ID".mongodb.net:27017 \
+cluster-zips-shard-0/cluster-zips-shard-00-00-"$MONGO_SRV_ID".mongodb.net:27017\
+, \
+cluster-zips-shard-0/cluster-zips-shard-00-01-"$MONGO_SRV_ID".mongodb.net:27017\
+, \
+cluster-zips-shard-0/cluster-zips-shard-00-02-"$MONGO_SRV_ID".mongodb.net:27017\
    --ssl \
    -u "$MONGO_USER" -p "$MONGO_PWD" \
    --authenticationDatabase admin \
    -d cluster-zips \
    --collection zips \
    --drop \
-   --file zips.json 
+   --file zips.json
 
 - For Heroku use environment variable MONGOLAB_URI
 
